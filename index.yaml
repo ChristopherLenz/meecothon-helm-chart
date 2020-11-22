@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  meecothon-rabbitmq-producer:
+  - apiVersion: v1
+    appVersion: "2020-11-22"
+    created: "2020-11-22T16:53:03.987708091+01:00"
+    description: A Helm chart for the RabbitMQ MeeCoThon producer
+    digest: 9f5a120fdcfa87a8732c5076d2d0e7438a1a63e4bd85a78d5fac4af3615940b0
+    name: meecothon-rabbitmq-producer
+    urls:
+    - https://christopherlenz.github.io/meecothon-helm-chart/meecothon-rabbitmq-producer-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-11-22T16:53:03.98724058+01:00"

@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: meecothon-producer-app
+    role: backend
+  name: {{ template "meecothon.fullname" . }}-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ template "meecothon.fullname" . }}
+      role: backend
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: {{ template "meecothon.fullname" . }}
+        role: backend
+        date: "{{ date "20060102150405" .Release.Time }}"
+    spec:
+      containers:
+      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        name: {{ .Chart.Name }}
+        env:
+        - name: EXCHANGE
+          value: {{ .Values.messagequeue.exchangename }}
+        - name: PROXY_HOST
+          value: {{ .Values.hostname }}
+        - name: RABBITHOST
+          value: {{ .Values.messagequeue.uri }}
+        - name: RABBITHOSTPREFIX
+          value: "amqp"
+        - name: RABBITUSER
+          value: {{ .Values.messagequeue.user }}
+        - name: RABBITPASS
+          value: {{ .Values.messagequeue.pass }}
+        - name: URI
+          value: "$(RABBITHOSTPREFIX)://$(RABBITUSER):$(RABBITPASS)@$(RABBITHOST)"
+        ports:
+        - containerPort: 8080
+          name: back-event
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 1
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 20m
+            memory: 30Mi
+      restartPolicy: Always
