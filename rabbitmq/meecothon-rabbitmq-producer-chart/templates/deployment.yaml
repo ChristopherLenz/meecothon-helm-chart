@@ -30,7 +30,7 @@ spec:
         env:
         - name: EXCHANGE
           value: {{ .Values.messagequeue.exchangename }}
-        - name: EXCHANGE-TYPE
+        - name: EXCHANGETYPE
           value: {{ .Values.messagequeue.exchangetype }}
         - name: PROXY_HOST
           value: {{ .Values.hostname }}
