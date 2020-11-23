@@ -7,6 +7,7 @@ image:
   pullPolicy: Always
 messagequeue:
   exchangename: "meecothon"
+  exchangetype: "direct"
   queuename: "event-mock-queue"
   uri: "rabbitmq.meecothon.svc.cluster.local:5672/"
 hostname: "producer.meecothon.com:8080"
