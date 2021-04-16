@@ -3,8 +3,9 @@ kind: Service
 metadata:
   name: {{ template "generic.fullname" . }}-svc
 spec:
+  type: {{ .Values.service.type }}
   selector:
     app: {{ template "generic.fullname" . }}
   ports:
   - port: 80
-    targetPort: 8080
+    targetPort: 80

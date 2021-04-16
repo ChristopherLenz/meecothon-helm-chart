@@ -5,7 +5,13 @@ image:
   repository: "registry-1.docker.io/christopherlenz/meecothon-rabbitmq"
   tag: "1.0-producer"
   pullPolicy: Always
+  pullSecrets:
+    useImageCredentials: false
+    name:
 hostname: "producer.meecothon.com:8080"
+
+service:
+  type: ClusterIP
 
 ## Additional environment variables to set
 ## E.g:
@@ -14,6 +20,8 @@ hostname: "producer.meecothon.com:8080"
 ##     value: BAR
 ##
 extraEnvVars: []
+
+serviceAccountName:
 
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious

@@ -23,6 +23,9 @@ spec:
         role: backend
         date: "{{ date "20060102150405" now}}"
     spec:
+      {{- if .Values.serviceAccountName }}
+      serviceAccountName: {{ .Values.serviceAccountName }}
+      {{- end }}
       containers:
       - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
@@ -32,20 +35,14 @@ spec:
         {{- include "common.tplvalues.render" (dict "value" .Values.extraEnvVars "context" $) | nindent 10 }}
         {{- end }}
         ports:
-        - containerPort: 8080
+        - containerPort: 80
           name: back-event
           protocol: TCP
-        readinessProbe:
-          failureThreshold: 3
-          httpGet:
-            path: /health
-            port: 8080
-            scheme: HTTP
-          initialDelaySeconds: 5
-          periodSeconds: 5
-          successThreshold: 1
-          timeoutSeconds: 1
         {{- if .Values.resources }}
         resources: {{- toYaml .Values.resources | nindent 10 }}
         {{- end }}
       restartPolicy: Always
+      {{- if .Values.image.pullSecrets.useImageCredentials }}
+      imagePullSecrets:
+        - name: {{ .Values.image.pullSecrets.name }}
+      {{- end }}
