@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "generic.fullname" . }}-svc
+spec:
+  selector:
+    app: {{ template "generic.fullname" . }}
+  ports:
+  - port: 80
+    targetPort: 8080
