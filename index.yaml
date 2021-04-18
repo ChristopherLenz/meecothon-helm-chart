@@ -3,7 +3,22 @@ entries:
   generic-webapi:
   - apiVersion: v2
     appVersion: "2021-04-16"
-    created: "2021-04-16T15:03:07.017032344+02:00"
+    created: "2021-04-18T13:17:36.5276662+02:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: A generic Helm chart for Web-APIs
+    digest: 0a5793e457c313383aa83886c0fbe21bdb929ea1f2f5336016edda7d2744510b
+    name: generic-webapi
+    urls:
+    - https://christopherlenz.github.io/meecothon-helm-chart/generic-webapi-0.3.2.tgz
+    version: 0.3.2
+  - apiVersion: v2
+    appVersion: "2021-04-16"
+    created: "2021-04-18T13:17:36.525974462+02:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -18,7 +33,7 @@ entries:
     version: 0.3.1
   - apiVersion: v2
     appVersion: "2021-04-16"
-    created: "2021-04-16T15:03:07.015279375+02:00"
+    created: "2021-04-18T13:17:36.523302567+02:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -34,7 +49,7 @@ entries:
   meecothon-rabbitmq-producer:
   - apiVersion: v1
     appVersion: "2020-11-23"
-    created: "2021-04-16T15:03:07.017826567+02:00"
+    created: "2021-04-18T13:17:36.529487867+02:00"
     description: A Helm chart for the RabbitMQ MeeCoThon producer
     digest: abf9c7cc9ebccec86357df060e7c3073bfeef949390f89a1f68fe4f63cd9a2bf
     name: meecothon-rabbitmq-producer
@@ -43,11 +58,11 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "2020-11-22"
-    created: "2021-04-16T15:03:07.017425465+02:00"
+    created: "2021-04-18T13:17:36.528863762+02:00"
     description: A Helm chart for the RabbitMQ MeeCoThon producer
     digest: 9f5a120fdcfa87a8732c5076d2d0e7438a1a63e4bd85a78d5fac4af3615940b0
     name: meecothon-rabbitmq-producer
     urls:
     - https://christopherlenz.github.io/meecothon-helm-chart/meecothon-rabbitmq-producer-0.1.0.tgz
     version: 0.1.0
-generated: "2021-04-16T15:03:07.013296487+02:00"
+generated: "2021-04-18T13:17:36.515958269+02:00"

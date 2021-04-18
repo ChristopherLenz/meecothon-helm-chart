@@ -6,7 +6,7 @@ metadata:
     role: backend
   name: {{ template "generic.fullname" . }}-deployment
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: {{ template "generic.fullname" . }}
