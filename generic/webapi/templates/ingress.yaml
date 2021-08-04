@@ -16,8 +16,12 @@ spec:
           serviceName: {{ template "generic.fullname" . }}-svc
           servicePort: {{ .Values.service.port }}
         path: {{ .Values.ingress.path }}
+  {{- if .Values.ingress.tls.enabled }}
   tls:
   - hosts:
     - {{ .Values.ingress.hostname }}
-    secretName: {{ .Values.ingress.secretName }}
+    {{- if .Values.ingress.tls.secretName }}
+    secretName: {{ .Values.ingress.tls.secretName }}
+    {{- end }}
+  {{- end }}
 {{- end }}
