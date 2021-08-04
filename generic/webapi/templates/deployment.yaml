@@ -32,8 +32,8 @@ spec:
         name: {{ .Chart.Name }}
         env:
         {{ range $k, $v := .Values.extraEnvVars }}
-          - name: {{ $v.name | quote }}
-            value: {{ $v.value | quote }}
+          - name: "{{ $v.name }}"
+            value: "{{ $v.value }}"
         {{- end }}
         envFrom:
           {{- if .Values.extraEnvVarsCM }}
