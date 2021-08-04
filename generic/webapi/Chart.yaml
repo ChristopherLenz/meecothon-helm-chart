@@ -1,7 +1,7 @@
 apiVersion: v2
 description: A generic Helm chart for Web-APIs
 name: generic-webapi
-version: 0.3.2
+version: 0.3.3
 appVersion: "2021-04-16"
 dependencies:
   - name: common

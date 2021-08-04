@@ -1,13 +1,23 @@
+{{- if and .Values.ingress.enabled }}
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: {{ template "generic.fullname" . }}-ingress
+  annotations:
+    {{- if and .Values.ingress.enabled .Values.ingress.annotations }}
+    {{- include "common.tplvalues.render" ( dict "value" .Values.ingress.annotations "context" $ ) | nindent 4 }}
+    {{- end }}
 spec:
   rules:
-  - host: {{ .Values.hostname }}
+  - host: {{ .Values.ingress.hostname }}
     http:
       paths:
       - backend:
           serviceName: {{ template "generic.fullname" . }}-svc
-          servicePort: 80
-        path: /
+          servicePort: {{ .Values.service.port }}
+        path: {{ .Values.ingress.path }}
+  tls:
+  - hosts:
+    - {{ .Values.ingress.hostname }}
+    secretName: {{ .Values.ingress.secretName }}
+{{- end }}

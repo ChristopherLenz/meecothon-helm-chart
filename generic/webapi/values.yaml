@@ -8,10 +8,22 @@ image:
   pullSecrets:
     useImageCredentials: false
     name:
-hostname: "producer.meecothon.com:8080"
 
 service:
   type: ClusterIP
+  port: 80
+  targetPort: 80
+
+ingress:
+  enabled: false
+  hostname: "producer.meecothon.com:8080"
+  path: /
+  tls:
+    enabled: false
+    secretName: "my-tls-secret"
+  ## Annotations to add to the ingress (evaluated as a template)
+  ##
+  annotations: {}
 
 ## Additional environment variables to set
 ## E.g:

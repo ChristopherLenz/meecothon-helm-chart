@@ -32,10 +32,10 @@ spec:
         name: {{ .Chart.Name }}
         env:
         {{- if .Values.extraEnvVars }}
-        {{- include "common.tplvalues.render" (dict "value" .Values.extraEnvVars "context" $) | nindent 10 }}
+        {{- include "common.tplvalues.render" (dict "value" .Values.extraEnvVars "context" $) | nindent 10 | quote }}
         {{- end }}
         ports:
-        - containerPort: 80
+        - containerPort: {{ .Values.service.targetPort }}
           name: back-event
           protocol: TCP
         {{- if .Values.resources }}

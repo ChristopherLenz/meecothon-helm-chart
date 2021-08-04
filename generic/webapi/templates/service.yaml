@@ -7,5 +7,5 @@ spec:
   selector:
     app: {{ template "generic.fullname" . }}
   ports:
-  - port: 80
-    targetPort: 80
+  - port: {{ .Values.service.port }}
+    targetPort: {{ .Values.service.targetPort }}
