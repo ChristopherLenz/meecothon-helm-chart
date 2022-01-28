@@ -1,0 +1,28 @@
+ingress:
+  annotations:
+    cert-manager.io/issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: nginx
+
+extraEnvVars:
+   - name: Redis__Password
+     value: oiBvEPHVOrPJkkCUHM9aksn+1xML7w3JlFp4w9filkU=
+   - name: Redis__AllowAdmin
+     value: false
+   - name: Redis__Ssl
+     value: true
+   - name: Redis__ConnectTimeout
+     value: 6000
+   - name: Redis__ConnectRetry
+     value: 2
+   - name: Redis__Hosts__0__Host
+     value: clupwardpegasus-cache.redis.cache.windows.net
+   - name: Redis__Hosts__0__Port
+     value: 6380
+
+resources:
+  limits: 
+     cpu: 250m
+     memory: 250Mi
+  requests:
+     cpu: 50m
+     memory: 100Mi
