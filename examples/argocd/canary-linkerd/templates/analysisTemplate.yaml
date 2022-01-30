@@ -17,7 +17,7 @@ spec:
             template:
               metadata:
                 annotations:
-                  linkerd.io/inject: {{ printf "{{ args.linkerd-enabled }}" }}
+                  linkerd.io/inject: "{{ printf "{{ args.linkerd-enabled }}" }}"
               spec:
                 restartPolicy: Never
                 containers:
