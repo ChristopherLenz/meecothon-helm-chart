@@ -1,0 +1,49 @@
+# Default values for helm-guestbook.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 5
+
+image:
+  repository: argoproj/rollouts-demo
+  tag: blue
+  pullPolicy: IfNotPresent
+
+rollout:
+  strategy:
+    canary:
+      stableService: rollout-linkerd-stable
+      canaryService: rollout-linkerd-canary
+      trafficManagement:
+        smi:
+          rootService: rollout-linkerd
+      steps:
+      - setWeight: 5
+      # The following pause step will pause the rollout indefinitely until manually resumed.
+      # Rollouts can be manually resumed by running `kubectl argo rollouts promote ROLLOUT`
+      - pause: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  requests:
+    memory: 32Mi
+    cpu: 5m
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
