@@ -3,7 +3,7 @@ entries:
   example-argocd-bluegreen:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2022-01-30T13:25:29.805954455+01:00"
+    created: "2022-01-30T14:04:15.143261782+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -20,7 +20,7 @@ entries:
   example-argocd-canary:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2022-01-30T13:25:29.808029129+01:00"
+    created: "2022-01-30T14:04:15.144955565+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -37,7 +37,7 @@ entries:
   example-argocd-canary-linkerd:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2022-01-30T13:25:29.810217125+01:00"
+    created: "2022-01-30T14:04:15.146463239+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -45,7 +45,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for Kubernetes
-    digest: f93c528bb72038aac2158d5084d89eb22cbb16d79b3b6f06a920dbe29afb428f
+    digest: 9cd676473390f4204ca1f888a1974375147e3fb64fa1aa14cfc1128c6258161f
     name: example-argocd-canary-linkerd
     type: application
     urls:
@@ -54,7 +54,7 @@ entries:
   generic-webapi:
   - apiVersion: v2
     appVersion: "2021-08-04"
-    created: "2022-01-30T13:25:29.822077304+01:00"
+    created: "2022-01-30T14:04:15.156497192+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -69,7 +69,7 @@ entries:
     version: 0.3.5
   - apiVersion: v2
     appVersion: "2021-08-04"
-    created: "2022-01-30T13:25:29.819908882+01:00"
+    created: "2022-01-30T14:04:15.153810863+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -84,7 +84,7 @@ entries:
     version: 0.3.4
   - apiVersion: v2
     appVersion: "2021-04-16"
-    created: "2022-01-30T13:25:29.817381921+01:00"
+    created: "2022-01-30T14:04:15.152293325+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -99,7 +99,7 @@ entries:
     version: 0.3.3
   - apiVersion: v2
     appVersion: "2021-04-16"
-    created: "2022-01-30T13:25:29.815503682+01:00"
+    created: "2022-01-30T14:04:15.150721087+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -114,7 +114,7 @@ entries:
     version: 0.3.2
   - apiVersion: v2
     appVersion: "2021-04-16"
-    created: "2022-01-30T13:25:29.813723207+01:00"
+    created: "2022-01-30T14:04:15.149205109+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -129,7 +129,7 @@ entries:
     version: 0.3.1
   - apiVersion: v2
     appVersion: "2021-04-16"
-    created: "2022-01-30T13:25:29.811464026+01:00"
+    created: "2022-01-30T14:04:15.147824183+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -145,7 +145,7 @@ entries:
   meecothon-rabbitmq-producer:
   - apiVersion: v1
     appVersion: "2020-11-23"
-    created: "2022-01-30T13:25:29.823251271+01:00"
+    created: "2022-01-30T14:04:15.157424415+01:00"
     description: A Helm chart for the RabbitMQ MeeCoThon producer
     digest: abf9c7cc9ebccec86357df060e7c3073bfeef949390f89a1f68fe4f63cd9a2bf
     name: meecothon-rabbitmq-producer
@@ -154,11 +154,11 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "2020-11-22"
-    created: "2022-01-30T13:25:29.822660396+01:00"
+    created: "2022-01-30T14:04:15.157021842+01:00"
     description: A Helm chart for the RabbitMQ MeeCoThon producer
     digest: 9f5a120fdcfa87a8732c5076d2d0e7438a1a63e4bd85a78d5fac4af3615940b0
     name: meecothon-rabbitmq-producer
     urls:
     - https://christopherlenz.github.io/meecothon-helm-chart/meecothon-rabbitmq-producer-0.1.0.tgz
     version: 0.1.0
-generated: "2022-01-30T13:25:29.804271707+01:00"
+generated: "2022-01-30T14:04:15.140714997+01:00"
