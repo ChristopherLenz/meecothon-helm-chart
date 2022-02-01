@@ -4,27 +4,15 @@ metadata:
   name: load-test
 spec:
   args:
-    - name: namespace
     - name: linkerd-enabled
       value: enabled
   metrics:
     - name: pass
-      interval: 5s
-      failureLimit: 1
+      interval: 30s
+      successCondition: result[0] >= 0.95
+      failureLimit: 3
       provider:
-        job:
-          spec:
-            template:
-              metadata:
-                annotations:
-                  linkerd.io/inject: "{{ printf "{{ args.linkerd-enabled }}" }}"
-              spec:
-                restartPolicy: Never
-                containers:
-                  - name: load-tester
-                    image: argoproj/load-tester:latest
-                    command: [sh, -c, -x, -e]
-                    args:
-                      - |
-                        wrk -t10 -c40 -d45s -s report.lua http://rollout-linkerd.{{ printf "{{ args.namespace }}" }}.svc/color
-                        jq -e '.errors_ratio <= 0.35 and .latency_avg_ms < 100' report.json
+        prometheus:
+          address: http://prometheus.linkerd-viz.svc.cluster.local:9090
+          query: |
+            sum(irate(response_total{classification="success", namespace="default", direction="inbound", app="example-argocd-canary-linkerd"}[30s])) by (deployment) / sum(irate(response_total{namespace="default", direction="inbound", app="example-argocd-canary-linkerd"}[30s]))

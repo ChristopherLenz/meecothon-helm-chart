@@ -12,16 +12,19 @@ image:
 rollout:
   strategy:
     canary:
-      stableService: rollout-linkerd-stable
-      canaryService: rollout-linkerd-canary
-      trafficManagement:
+      analysis:
+        templates:
+        - templateName: load-test
+      canaryService: release-name-example-argocd-canary-linkerd-canary
+      stableService: release-name-example-argocd-canary-linkerd-stable
+      trafficRouting:
         smi:
           rootService: rollout-linkerd
       steps:
       - setWeight: 5
       # The following pause step will pause the rollout indefinitely until manually resumed.
       # Rollouts can be manually resumed by running `kubectl argo rollouts promote ROLLOUT`
-      - pause: {}
+      - pause: {duration: 2m}
 
 service:
   type: ClusterIP
@@ -31,6 +34,9 @@ resources:
   requests:
     memory: 32Mi
     cpu: 5m
+  limits:
+    memory: 64Mi
+    cpu: 10m
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following

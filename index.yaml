@@ -3,7 +3,7 @@ entries:
   example-argocd-bluegreen:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2022-01-30T14:04:15.143261782+01:00"
+    created: "2022-02-01T19:31:30.535590235+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -20,7 +20,7 @@ entries:
   example-argocd-canary:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2022-01-30T14:04:15.144955565+01:00"
+    created: "2022-02-01T19:31:30.53735974+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -37,7 +37,23 @@ entries:
   example-argocd-canary-linkerd:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2022-01-30T14:04:15.146463239+01:00"
+    created: "2022-02-01T19:31:30.541172468+01:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: A Helm chart for Kubernetes
+    digest: 5c0a4a1b6f68d7bc36f252ece9e460ac792a13a23584ea2015e3d3a49adab292
+    name: example-argocd-canary-linkerd
+    type: application
+    urls:
+    - https://christopherlenz.github.io/meecothon-helm-chart/example-argocd-canary-linkerd-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2022-02-01T19:31:30.538865561+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -54,7 +70,7 @@ entries:
   generic-webapi:
   - apiVersion: v2
     appVersion: "2021-08-04"
-    created: "2022-01-30T14:04:15.156497192+01:00"
+    created: "2022-02-01T19:31:30.5511351+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -69,7 +85,7 @@ entries:
     version: 0.3.5
   - apiVersion: v2
     appVersion: "2021-08-04"
-    created: "2022-01-30T14:04:15.153810863+01:00"
+    created: "2022-02-01T19:31:30.549717127+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -84,7 +100,7 @@ entries:
     version: 0.3.4
   - apiVersion: v2
     appVersion: "2021-04-16"
-    created: "2022-01-30T14:04:15.152293325+01:00"
+    created: "2022-02-01T19:31:30.547292757+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -99,7 +115,7 @@ entries:
     version: 0.3.3
   - apiVersion: v2
     appVersion: "2021-04-16"
-    created: "2022-01-30T14:04:15.150721087+01:00"
+    created: "2022-02-01T19:31:30.545709996+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -114,7 +130,7 @@ entries:
     version: 0.3.2
   - apiVersion: v2
     appVersion: "2021-04-16"
-    created: "2022-01-30T14:04:15.149205109+01:00"
+    created: "2022-02-01T19:31:30.544204785+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -129,7 +145,7 @@ entries:
     version: 0.3.1
   - apiVersion: v2
     appVersion: "2021-04-16"
-    created: "2022-01-30T14:04:15.147824183+01:00"
+    created: "2022-02-01T19:31:30.542739113+01:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -145,7 +161,7 @@ entries:
   meecothon-rabbitmq-producer:
   - apiVersion: v1
     appVersion: "2020-11-23"
-    created: "2022-01-30T14:04:15.157424415+01:00"
+    created: "2022-02-01T19:31:30.551785182+01:00"
     description: A Helm chart for the RabbitMQ MeeCoThon producer
     digest: abf9c7cc9ebccec86357df060e7c3073bfeef949390f89a1f68fe4f63cd9a2bf
     name: meecothon-rabbitmq-producer
@@ -154,11 +170,11 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "2020-11-22"
-    created: "2022-01-30T14:04:15.157021842+01:00"
+    created: "2022-02-01T19:31:30.551482631+01:00"
     description: A Helm chart for the RabbitMQ MeeCoThon producer
     digest: 9f5a120fdcfa87a8732c5076d2d0e7438a1a63e4bd85a78d5fac4af3615940b0
     name: meecothon-rabbitmq-producer
     urls:
     - https://christopherlenz.github.io/meecothon-helm-chart/meecothon-rabbitmq-producer-0.1.0.tgz
     version: 0.1.0
-generated: "2022-01-30T14:04:15.140714997+01:00"
+generated: "2022-02-01T19:31:30.533000428+01:00"
